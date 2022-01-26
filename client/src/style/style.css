@@ -98,3 +98,14 @@
 .copyright{
     background-color: rgba(0, 0, 0, 0.2);
 }
+
+/* Login */
+
+.login {
+    background-color: #25817E;
+}
+
+.card-login {
+    background-color: #fff !important;
+    width: 25rem;
+}
