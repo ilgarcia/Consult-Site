@@ -4,16 +4,24 @@
 
 // https://www.youtube.com/watch?v=c-yoC4SXi4U&t=3s
 
-const express = require("express");
+import express from "express";
+import cors from "cors";
+
+class App {
+
+}
+
+export default new App().server
+
 // const path = require("path");
 // var bodyParser = require('body-parser')
 
-const app = express();
+// const app = express();
 
-app.get('/express_backend', (req, res) => {
-    res.send({express: 'YOUR BACKEND IS CONNECTED TO REACT'})
-})
+// app.get('/express_backend', (req, res) => {
+//     res.send({express: 'YOUR BACKEND IS CONNECTED TO REACT'})
+// })
 
-app.listen(5000, () => {
-    console.log("Running")
-})
+// app.listen(5000, () => {
+//     console.log("Running")
+// })
