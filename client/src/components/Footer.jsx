@@ -11,45 +11,45 @@ export default function Footer(props) {
                 {/* Social Media */}
                 <section className="mb-4">
                     <a
-                        class="btn btn-floating social-button m-1"
+                        className="btn btn-floating social-button m-1"
                         href="#!"
                         role="button"
                     >
                         <i
-                            class="bi-facebook"
+                            className="bi-facebook"
                             role="img"
                             aria-label="Facebook"
                         ></i>
                     </a>
                     <a
-                        class="btn btn-floating social-button m-1"
+                        className="btn btn-floating social-button m-1"
                         href="#!"
                         role="button"
                     >
                         <i
-                            class="bi-instagram"
+                            className="bi-instagram"
                             role="img"
                             aria-label="Instagram"
                         ></i>
                     </a>
                     <a
-                        class="btn btn-floating social-button m-1"
+                        className="btn btn-floating social-button m-1"
                         href="#!"
                         role="button"
                     >
                         <i
-                            class="bi-linkedin"
+                            className="bi-linkedin"
                             role="img"
                             aria-label="Linkedin"
                         ></i>
                     </a>
                     <a
-                        class="btn btn-floating social-button m-1"
+                        className="btn btn-floating social-button m-1"
                         href="#!"
                         role="button"
                     >
                         <i
-                            class="bi-youtube"
+                            className="bi-youtube"
                             role="img"
                             aria-label="Youtube"
                         ></i>
@@ -96,50 +96,50 @@ export default function Footer(props) {
                             </p>
                         </Col>
                         <Col>
-                            <h5 class="text-uppercase">Links</h5>
-                            <ul class="list-unstyled mb-0">
+                            <h5 className="text-uppercase">Links</h5>
+                            <ul className="list-unstyled mb-0">
                                 <li>
-                                    <a href="#!" class="text-white">
+                                    <a href="#!" className="text-white">
                                         Link 1
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#!" class="text-white">
+                                    <a href="#!" className="text-white">
                                         Link 2
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#!" class="text-white">
+                                    <a href="#!" className="text-white">
                                         Link 3
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#!" class="text-white">
+                                    <a href="#!" className="text-white">
                                         Link 4
                                     </a>
                                 </li>
                             </ul>
                         </Col>
                         <Col>
-                            <h5 class="text-uppercase">Links</h5>
-                            <ul class="list-unstyled mb-0">
+                            <h5 className="text-uppercase">Links</h5>
+                            <ul className="list-unstyled mb-0">
                                 <li>
-                                    <a href="#!" class="text-white">
+                                    <a href="#!" className="text-white">
                                         Link 1
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#!" class="text-white">
+                                    <a href="#!" className="text-white">
                                         Link 2
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#!" class="text-white">
+                                    <a href="#!" className="text-white">
                                         Link 3
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#!" class="text-white">
+                                    <a href="#!" className="text-white">
                                         Link 4
                                     </a>
                                 </li>
@@ -150,10 +150,10 @@ export default function Footer(props) {
             </Container>
             {/* Copyright */}
             <div
-                class="text-center p-3 copyright"
+                className="text-center p-3 copyright"
             >
                 © 2020 Copyright: {" "}
-                <a class="text-white" href="https://mdbootstrap.com/">
+                <a className="text-white" href="https://mdbootstrap.com/">
                      MDBootstrap.com
                 </a>
             </div>

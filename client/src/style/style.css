@@ -110,3 +110,14 @@
     background-color: #fff !important;
     width: 25rem;
 }
+
+.user-button{
+    font-size: 18px;
+}
+.user-button:hover{
+    background-color: #25817E;
+}
+
+.post-button:hover{
+    background-color: #25817E;
+}

@@ -144,9 +144,9 @@ export default function Home(props) {
                                 height="315"
                                 src="https://www.youtube.com/embed/CyrpiyAAVCg"
                                 title="YouTube video player"
-                                frameborder="0"
+                                frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen
+                                allowFullScreen
                             ></iframe>
                         </Col>
                     </Row>

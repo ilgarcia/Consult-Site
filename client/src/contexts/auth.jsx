@@ -1,60 +1,63 @@
 import React, { useState, useEffect, createContext } from "react";
-
 import { useNavigate } from "react-router-dom";
 
-import {api, createSession} from "../services/api"
+import { createSession } from "../services/api";
 
 export const AuthContext = createContext();
 
-export const AuthProvider = ({children}) =>{
-    const navigate = useNavigate()
-    const [user, setUser] = useState(null)
-    const [loading, setLoading] = useState(true)
+export const AuthProvider = ({ children }) => {
+  const navigate = useNavigate();
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [loginMsg, setLoginMsg] = useState("");
 
-    useEffect(() => {
-        const recoveredUser = localStorage.getItem('user')
-        if(recoveredUser){
-            setUser(recoveredUser)
-        }
-        setLoading(false)
-    },[])
-
-    const loginUser = async (login, password) => {
-
-        const response = await createSession(login, password)
-
-        console.log("login", response.data)
-
-        // api session
-
-        const loggedUser = response.data.user
-        const token = response.data.token
-
-        localStorage.setItem("user", JSON.stringify(loggedUser))
-        localStorage.setItem("user", token)
-
-        api.defaults.headers.Authorization = `Bearer ${token}`
-
-        setUser(loggedUser)
-        navigate("/protagadmin/")
-
+  useEffect(() => {
+    const recoveredUser = localStorage.getItem("user");
+    if (recoveredUser) {
+      setUser(recoveredUser);
     }
-    const logoutUser = () => {
-        console.log('logout')
+    setLoading(false);
+  }, []);
 
-        localStorage.removeItem("user")
-        localStorage.removeItem("token")
+  const loginUser = async (login, password) => {
+    const response = await createSession(login, password);
+    if (response.data.validation) {
 
-        api.defaults.headers.Authorization = null
+      const loggedUser = response.data.user;
+      const token = response.data.token;
 
-        setUser(null)
-        navigate("/loginadmin/")
+      localStorage.setItem("user", JSON.stringify(loggedUser));
+      localStorage.setItem("token", token);
+
+      setUser(loggedUser);
+      navigate("/");
+    } else {
+      setLoginMsg(response.data.error);
     }
+  };
 
+  const logoutUser = () => {
+    console.log("logout");
 
-    return(
-        <AuthContext.Provider value={{authenticated: !!user, user, loading, loginUser, logoutUser}}>
-            {children}
-        </AuthContext.Provider>
-    )
-}
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+
+    setUser(null);
+    navigate("/loginadmin/");
+  };
+
+  return (
+    <AuthContext.Provider
+      value={{
+        authenticated: !!user,
+        user,
+        loading,
+        loginMsg,
+        loginUser,
+        logoutUser,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+};
